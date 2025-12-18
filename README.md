@@ -1,55 +1,108 @@
-🧾 Sistema de Gestión de Clientes, Artículos y Facturación
-📖 Descripción
+# 🧾 Sistema de Gestión de Clientes, Artículos y Facturación
 
-Este proyecto es un sistema de gestión de clientes, artículos y facturación, desarrollado en C como trabajo práctico de la materia Estructura y Base de Datos (2º año de la carrera).
-El programa permite registrar clientes y artículos, realizar facturaciones, generar estadísticas y mostrar datos ordenados.
+Proyecto desarrollado en **lenguaje C** como trabajo práctico de la materia **Estructura y Base de Datos** (2º año de la carrera).
 
-Aunque algunas decisiones, como el uso de archivos binarios, venían indicadas por los requisitos de la materia, este proyecto me permitió aprender a manejar datos persistentes, archivos binarios y estructuras en C, así como interactuar con múltiples archivos al mismo tiempo de manera controlada.
+---
 
-💡 Funcionalidades
+## 📖 Descripción del proyecto
 
-📂 Mostrar Clientes y Artículos: Visualiza los registros guardados en archivos binarios.
+Este sistema permite gestionar **clientes, artículos y procesos de facturación**, aplicando conceptos fundamentales de programación en C, manejo de archivos binarios y persistencia de datos.
 
-➕ Agregar Cliente o Artículo: Permite crear nuevos registros, actualizando los archivos correspondientes.
+El programa posibilita registrar clientes y artículos, realizar facturaciones, actualizar stock, generar estadísticas y mostrar datos ordenados, manteniendo la consistencia de la información entre múltiples archivos.
 
-🧾 Facturación: Registra la venta de artículos a clientes, actualiza stock y saldo del cliente, y guarda un historial en un archivo de facturas.
+Si bien algunas decisiones de diseño (como el uso de archivos binarios) estaban establecidas por los requisitos académicos, el proyecto fue clave para afianzar el manejo de **datos persistentes**, la **interacción controlada entre archivos** y la **lógica de negocio aplicada a un sistema realista**.
 
-📊 Estadísticas: Muestra el producto estrella basado en el monto total facturado.
+---
 
-🔢 Ordenar y mostrar clientes: Genera un listado de clientes ordenados alfabéticamente por nombre.
+## 💡 Funcionalidades principales
 
-💾 Persistencia: Todos los datos se guardan en archivos binarios (.dat) para poder reutilizarlos en futuras ejecuciones.
+- 📂 **Mostrar clientes y artículos**  
+  Visualización de los registros almacenados en archivos binarios.
 
-La función facturar fue la más desafiante, ya que implica manejar tres archivos simultáneamente y asegurar la consistencia de datos, especialmente cuando se actualiza stock o se registra el saldo del cliente.
+- ➕ **Alta de clientes y artículos**  
+  Creación de nuevos registros con actualización inmediata de los archivos correspondientes.
 
-🛠 Tecnologías y conceptos aplicados
+- 🧾 **Facturación**  
+  Registro de ventas de artículos a clientes, con:
+  - actualización de stock  
+  - actualización del saldo del cliente  
+  - almacenamiento del historial de facturas en archivo binario
 
-Lenguaje C: uso de struct, manejo de archivos binarios (fread, fwrite, fseek, fflush), validación de entradas y control de errores.
+- 📊 **Estadísticas**  
+  Identificación del producto estrella en base al monto total facturado.
 
-Estructuras: Cliente_t, Articulo_t y Factura_t organizan los datos del sistema, facilitando consultas y actualizaciones.
+- 🔢 **Listado ordenado de clientes**  
+  Generación de un listado alfabético por nombre.
 
-Validaciones clave:
+- 💾 **Persistencia de datos**  
+  Todos los datos se almacenan en archivos binarios (`.dat`) para ser reutilizados en futuras ejecuciones.
 
-Apertura y creación de archivos.
+---
 
-Existencia de clientes y artículos antes de operar.
+## ⚙️ Desafío técnico destacado
 
-Cantidad suficiente de stock al facturar.
+La funcionalidad de **facturación** fue el aspecto más desafiante del proyecto, ya que requiere:
 
-Aprendizaje clave:
+- Manejo simultáneo de **tres archivos binarios** (clientes, artículos y facturas)
+- Validación de existencia de registros
+- Control de stock disponible
+- Actualización consistente de datos ya existentes en archivos
+- Escritura y reescritura selectiva de registros mediante `fseek`
 
-Manejo avanzado de archivos binarios y manipulación de campos de texto.
+Este proceso permitió profundizar en la **consistencia de datos** y en la correcta coordinación de múltiples fuentes de información.
 
-Recorriendo archivos para sobreescribir datos específicos y mantener consistencia.
+---
 
-Integración de múltiples archivos en un flujo lógico de operaciones.
+## 🛠 Tecnologías y conceptos aplicados
 
-🚀 Mejoras posibles
+- **Lenguaje C**
+  - Uso de `struct`
+  - Archivos binarios (`fread`, `fwrite`, `fseek`, `fflush`)
+  - Validación de entradas
+  - Control de errores
 
-Implementar memoria dinámica para optimizar uso de recursos y tiempos de ejecución.
+- **Estructuras de datos**
+  - `Cliente_t`
+  - `Articulo_t`
+  - `Factura_t`
 
-Agregar autenticación de usuarios o control de permisos para proteger los archivos.
+- **Validaciones clave**
+  - Apertura y creación segura de archivos
+  - Existencia de clientes y artículos antes de operar
+  - Control de stock al facturar
+  - Actualización consistente de registros
 
-Incorporar reportes detallados de facturación por cliente o por artículo.
+---
 
-Posibilidad de exportar datos a formato legible (.txt o .csv) para informes externos.
+## 📘 Aprendizajes clave
+
+- Manejo avanzado de archivos binarios en C
+- Reescritura controlada de registros específicos
+- Diseño de lógica de negocio aplicada a facturación
+- Coordinación de múltiples archivos dentro de un flujo lógico
+- Organización y modularización del código
+
+---
+
+## 🚀 Posibles mejoras futuras
+
+- Implementar memoria dinámica para optimizar recursos
+- Agregar autenticación de usuarios y control de permisos
+- Incorporar reportes detallados de facturación por cliente o artículo
+- Exportación de datos a formatos legibles (`.txt` / `.csv`)
+- Separación del proyecto en módulos para mejorar escalabilidad
+
+---
+
+## 👩‍💻 Autora
+
+**Carla Sofía Corvalán Portillo**  
+Docente técnica y estudiante de Tecnicatura Superior en Informática  
+Interesada en desarrollarse profesionalmente en el ámbito IT, especialmente en áreas de backend, bases de datos y sistemas.
+
+---
+
+## 🎓 Contexto académico
+
+Trabajo práctico realizado para la materia **Estructura y Base de Datos**  
+Universidad Tecnológica Nacional – INSPT
